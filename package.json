@@ -1,19 +1,19 @@
 {
-  "name": "pinao",
+  "name": "piano",
   "version": "0.0.1",
   "packageManager": "pnpm@7.6.0",
-  "description": "pinao",
+  "description": "piano",
   "author": "Simon He",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git + git@github.com:Simon-He95/pinao.git"
+    "url": "git + git@github.com:Simon-He95/piano.git"
   },
   "bugs": {
-    "url": "https://github.com/Simon-He95/pinao/issues"
+    "url": "https://github.com/Simon-He95/piano/issues"
   },
   "keywords": [
-    "pinao",
+    "piano",
     "vue"
   ],
   "exports": {
