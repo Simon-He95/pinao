@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useEventListener } from 'lazy-js-utils'
+
 const tone = {
   'c': [16.35, 32.7, 65.41, 130.81, 261.63, 523.25, 1046.5, 2093.0, 4186.01],
   'c#': [17.32, 34.65, 69.3, 138.59, 277.18, 554.37, 1108.73, 2217.46, 4434.92],
@@ -148,11 +150,8 @@ onMounted(() => {
   initAudio()
 })
 
-const startListener = () => {
-  window.addEventListener('keypress', handleKeyPressNote)
-  window.addEventListener('keyup', handleKeyUpNote)
-}
-startListener()
+useEventListener(window, 'keypress', handleKeyPressNote)
+useEventListener(window, 'keyup', handleKeyUpNote)
 </script>
 
 <template>
