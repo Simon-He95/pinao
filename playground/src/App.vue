@@ -182,7 +182,6 @@ const releaseKey = (noteId: string) => {
 // --- Auto Play Logic (Updated for Chords) ---
 const interruptAutoPlay = () => {
   if (isAutoPlaying.value) {
-    console.log('Interrupting auto-play...')
     isAutoPlaying.value = false
     if (autoPlayTimeoutId.value) {
       clearTimeout(autoPlayTimeoutId.value)
@@ -202,12 +201,10 @@ const interruptAutoPlay = () => {
 const playSong = async (song: Array<{ note: string | null; duration: number; lyric?: string }>) => {
   isAutoPlaying.value = true
   currentLyric.value = '' // Clear lyrics initially
-  console.log('Starting auto-play...')
   for (let i = 0; i < song.length; i++) {
-    if (!isAutoPlaying.value) {
-      console.log('Auto-play interrupted.')
+    if (!isAutoPlaying.value)
       break
-    }
+
     const { note, duration, lyric } = song[i]
 
     // Update lyric when the note starts
@@ -244,7 +241,6 @@ const playSong = async (song: Array<{ note: string | null; duration: number; lyr
       await new Promise(resolve => setTimeout(resolve, 50))
   }
   if (isAutoPlaying.value) { // Check if it finished naturally
-    console.log('Auto-play finished.')
     isAutoPlaying.value = false
     currentLyric.value = '' // Clear lyric at the end
   }
